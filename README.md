@@ -42,15 +42,10 @@ python3 run_optimizer.py --mode risk --lambda 0.5
 ### Launch Streamlit Dashboard
 streamlit run app.py
 
-## Project Strcuture 
-src/
-  optimize_pipeline.py # Core LP solver
-  scenario_analysis.py # Spot-price simulations
-  risk_tradeoff.py # Cost-risk optimization
-  baseline_compare.py # Baseline allocator
-  app.py # Streamlit UI
-data/
-  raw/ # AWS spot-price data
-  processed/ # Specs, merged prices, jobs
-  outputs/ # Optimization results
-config.yaml 
+## Project Architecture
+
+<img src="docs/architecture.png" width="650">
+
+
+
+
