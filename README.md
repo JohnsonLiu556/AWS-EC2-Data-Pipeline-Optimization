@@ -10,10 +10,10 @@ Using real historical EC2 spot-price traces and a linear programming model (CVXP
 - Cleans and processes **real AWS spot-price data**
 - Models data-pipeline jobs with CPU hours, memory, and performance requirements
 - Optimizes job placement using:
-  - 📉 **Cost minimization**
-  - ⚡ **Performance tier enforcement**
-  - 🧠 **Risk modeling based on spot-price discount**
-  - 🎲 **Scenario simulations under spot-price volatility**
+  - **Cost minimization**
+  - **Performance tier enforcement**
+  - **Risk modeling based on spot-price discount**
+  - **Scenario simulations under spot-price volatility**
 - Provides:
   - Optimal instance assignment  
   - Cost–risk Pareto frontier  
@@ -32,17 +32,25 @@ Using real historical EC2 spot-price traces and a linear programming model (CVXP
 
 ### Base optimization
 python3 run_optimizer.py --mode base
+
+### Scenario Analysis (Spot Price Volatility)
 python3 run_optimizer.py --mode scenario
+
+### Cost–Risk Optimization
 python3 run_optimizer.py --mode risk --lambda 0.5
+
+### Launch Streamlit Dashboard
 streamlit run app.py
 
+## Project Strcuture 
 src/
-optimize_pipeline.py # Core LP solver
-scenario_analysis.py # Spot-price simulations
-risk_tradeoff.py # Cost-risk optimization
-baseline_compare.py # Baseline allocator
-app.py # Streamlit UI
+  optimize_pipeline.py # Core LP solver
+  scenario_analysis.py # Spot-price simulations
+  risk_tradeoff.py # Cost-risk optimization
+  baseline_compare.py # Baseline allocator
+  app.py # Streamlit UI
 data/
-raw/ # AWS spot-price data
-processed/ # Specs, merged prices, jobs
-outputs/ # Optimization results
+  raw/ # AWS spot-price data
+  processed/ # Specs, merged prices, jobs
+  outputs/ # Optimization results
+config.yaml 
