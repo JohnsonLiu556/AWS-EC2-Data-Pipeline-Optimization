@@ -1,0 +1,13 @@
+paths:
+  jobs: jobs.csv
+  instance_prices: merged_instance_prices.csv
+
+optimization:
+  default_solver: ECOS
+
+scenario:
+  num_scenarios: 50
+  noise_level: 0.30   # ±30% spot price volatility
+
+risk:
+  lambdas: [0.0, 0.2, 0.5, 1.0, 2.0]
